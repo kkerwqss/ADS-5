@@ -1,18 +1,20 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
+#include <string>
 
 template<typename T, int size>
 class TStack {
   private:
     T * data = new T[size];
     int top = 0;
+
   public:
-    TStack () {
+    TStack() {
       top = 0;
     }
 
-    ~TStack() {delete[] data}
+    ~TStack() { delete[] data; }
 
     void push(const T& item) {
       if (top > size - 1) {
@@ -44,4 +46,4 @@ class TStack {
     }
 };
 
-#endif
+#endif  // INCLUDE_TSTACK_H_

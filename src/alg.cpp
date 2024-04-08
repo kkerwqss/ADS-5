@@ -68,7 +68,7 @@ std::string infx2pstfx(std::string inf) {
 
 int eval(std::string pref) {
   int num1 = 0, num2 = 0;
-  TStack<char,100> stack;
+  TStack<char, 100> stack;
   std::string line;
   for (int i = 0; pref[i]; i++) {
     if (pref[i] >= '0' && pref[i] <= '9') {
