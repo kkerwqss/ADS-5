@@ -11,38 +11,38 @@ class TStack {
 
  public:
   TStack() {
-   top = 0;
+    top = 0;
   }
 
   ~TStack() { delete[] data; }
 
   void push(const T &item) {
-   if (top > size - 1) {
-    throw std::string("Full!!");
-   } else {
-    data[top++] = item;
-   }
+    if (top > size - 1) {
+      throw std::string("Full!!");
+    } else {
+      data[top++] = item;
+    }
   }
 
   T pop() {
-   if (top == 0) {
-    throw std::string("Empty!!");
-   } else {
-    top--;
-    return data[top];
-   }
+    if (top == 0) {
+      throw std::string("Empty!!");
+    } else {
+      top--;
+      return data[top];
+    }
   }
 
   T stTop() {
-   if (top > 0) {
-    return data[top - 1];
-   } else {
-    return -1;
-   }
+    if (top > 0) {
+      return data[top - 1];
+    } else {
+      return -1;
+    }
   }
 
   bool isEmpty() const {
-   return top == 0;
+    return top == 0;
   }
 };
 
