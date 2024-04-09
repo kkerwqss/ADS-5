@@ -3,47 +3,47 @@
 #define INCLUDE_TSTACK_H_
 #include <string>
 
-template<typename T, int size>
+template <typename T, int size>
 class TStack {
-private:
-  T * data = new T[size];
+ private:
+  T *data = new T[size];
   int top = 0;
 
-public:
+ public:
   TStack() {
-    top = 0;
+   top = 0;
   }
 
   ~TStack() { delete[] data; }
 
-  void push(const T& item) {
-    if (top > size - 1) {
-      throw std::string("Full!!");
-    } else {
-      data[top++] = item;
-    }
+  void push(const T &item) {
+   if (top > size - 1) {
+    throw std::string("Full!!");
+   } else {
+    data[top++] = item;
+   }
   }
 
   T pop() {
-    if (top == 0) {
-      throw std::string("Empty!!");
-    } else {
-      top--;
-      return data[top];
-    }
+   if (top == 0) {
+    throw std::string("Empty!!");
+   } else {
+    top--;
+    return data[top];
+   }
   }
 
   T stTop() {
-    if (top > 0) {
-      return data[top - 1];
-    } else {
-      return -1;
-    }
+   if (top > 0) {
+    return data[top - 1];
+   } else {
+    return -1;
+   }
   }
 
   bool isEmpty() const {
-    return top == 0;
+   return top == 0;
   }
 };
 
-#endif  // INCLUDE_TSTACK_H_
+#endif // INCLUDE_TSTACK_H_

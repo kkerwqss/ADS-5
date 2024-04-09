@@ -45,8 +45,7 @@ std::string infx2pstfx(std::string inf) {
       if ((i != inf.length() - 1) || (!stack.isEmpty())) {
         post += " ";
       }
-    }
-    else if (inf[i] == '(') {
+    } else if (inf[i] == '(') {
       stack.push(inf[i]);
     } else if (stack.isEmpty()) {
       stack.push(inf[i]);
@@ -68,7 +67,9 @@ std::string infx2pstfx(std::string inf) {
   }
   while (!stack.isEmpty()) {
     post += stack.pop();
-    post += ' ';
+    if (!stack.isEmpty()) {
+      post += ' ';
+    }
   }
   return post;
 }
